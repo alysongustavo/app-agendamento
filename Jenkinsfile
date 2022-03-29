@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-              sh 'ssh ubuntu@192.168.1.26 "cd appagendamento; \
+              sh 'ssh -o StrictHostKeyChecking=no ubuntu@192.168.1.26 "cd appagendamento; \
               git pull origin main; \
               composer install --optimize-autoloader --no-dev; \
               composer update "'
